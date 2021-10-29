@@ -1,12 +1,16 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
-import logo from '../../../images/logo.svg'
+import logo from '../../../images/logo.svg';
+import './Header.css';
+import useFirebase from '../../../Hooks/useFirebase';
 
 const Header = () => {
+    const { user, handleSignout } = useFirebase();
     return (
-        <div className="bg-light border-bottom">
-            <Navbar className="container">
+        <div className="bg-custom border-bottom">
+            <Navbar className="container" collapseOnSelect expand="lg">
                 <Navbar.Brand href="/home">
                     <img
                         src={logo}
@@ -17,9 +21,18 @@ const Header = () => {
                     />
                 </Navbar.Brand>
                 <Nav className="ms-auto">
-                    <Nav.Link as={Link} to="home#home">Home</Nav.Link>
-                    <Nav.Link as={Link} to="home#features">Features</Nav.Link>
-                    <Nav.Link as={Link} to="home#pricing">Pricing</Nav.Link>
+                    <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
+                    <Nav.Link as={HashLink} to="/home#services">Services</Nav.Link>
+                    {
+                        user.email &&
+                        <Nav.Link as={HashLink} to="/"><h6>{user.displayName}</h6></Nav.Link>
+                    }
+                    {
+                        user.email ?
+                            <Button onClick={handleSignout} className="btn-regular rounded-pill">SignOut</Button> :
+                            <Nav.Link as={HashLink} to="/login"><Button className="btn-regular rounded-pill">SignIn</Button></Nav.Link>
+                    }
+
                 </Nav>
             </Navbar>
         </div>

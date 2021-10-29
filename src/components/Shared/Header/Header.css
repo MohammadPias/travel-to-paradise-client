@@ -1,0 +1,7 @@
+.bg-custom{
+    background-color: #efffd4;
+}
+.nav-link a{
+    color: hsl(79, 78%, 15%);
+    font-weight: 600;
+}

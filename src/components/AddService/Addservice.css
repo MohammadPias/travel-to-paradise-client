@@ -1,0 +1,27 @@
+.map-container{
+    margin-top: 5%;
+    padding: 0;
+}
+.map-image img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.service-form{
+    margin-top: 5%;
+    height: auto;
+    background-color: #efffd4;
+    padding: 30px;
+    border-radius: 8px;
+}
+.service-form input, textarea{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 0.6px solid gray;
+    width: 100%;
+}
+.submit-btn{
+    background-color: #56ab30;
+    color: #efffd4;
+    padding: 5px 0;
+}
