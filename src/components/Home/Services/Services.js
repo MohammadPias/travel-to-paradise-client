@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Row, Spinner } from 'react-bootstrap';
+import useServices from '../../../Hooks/useServices';
 import Service from '../Service/Service';
 import './Services.css'
 
 const Services = () => {
-    const [services, setService] = useState([]);
-
-    useEffect(() => {
-        fetch('https://immense-taiga-30421.herokuapp.com/services')
-            .then(res => res.json())
-            .then(data => setService(data))
-    }, []);
+    const { services } = useServices();
     return (
         <div className="container mx-auto mt-5" id="services">
             <h3 className="text-center fw-bold">Services</h3>

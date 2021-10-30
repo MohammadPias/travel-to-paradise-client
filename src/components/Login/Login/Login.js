@@ -1,9 +1,10 @@
 import React from 'react';
 import useFirebase from '../../../Hooks/useFirebase';
+import useAuth from '../../Context/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const { handleGoogleSignin } = useFirebase();
+    const { handleGoogleSignin } = useAuth();
     return (
         <div className="container mx-auto google-signin">
             <h4 className="text-center">Signin</h4>

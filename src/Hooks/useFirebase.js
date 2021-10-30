@@ -10,18 +10,20 @@ const useFirebase = () => {
 
     initializeAuthentication();
 
-    const googleProvider = new GoogleAuthProvider();
+
     const auth = getAuth();
 
     //=========== Handle Sign in==========
     const handleGoogleSignin = () => {
-        // isLodding(true)
+        setIsLodding(true);
+        const googleProvider = new GoogleAuthProvider();
+
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 setUser(result);
             })
             .catch(error => setError(error.message))
-        // .finally(() => setIsLodding(false))
+            .finally(() => setIsLodding(false))
     };
     //============ Handle Sign Out=======
     const handleSignout = () => {

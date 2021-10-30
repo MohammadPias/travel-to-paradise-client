@@ -7,7 +7,7 @@ const AddService = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/services', {
+        fetch('https://immense-taiga-30421.herokuapp.com/services', {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
@@ -36,9 +36,9 @@ const AddService = () => {
                 <br />
                 <textarea placeholder="Description" {...register("description")} />
                 <br />
-                <input placeholder="PriceSingle" type="number" {...register("price-single")} />
+                <input placeholder="PriceSingle" type="number" {...register("PriceSingle")} />
                 <br />
-                <input placeholder="PriceCouple" type="number" {...register("price-couple")} />
+                <input placeholder="PriceCouple" type="number" {...register("PriceCouple")} />
                 <br />
                 <input placeholder="Rating" {...register("rating")} />
                 <br />
