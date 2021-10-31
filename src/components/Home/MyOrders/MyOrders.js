@@ -1,8 +1,10 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import { Row } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useAuth from '../../Context/useAuth';
 import Order from '../../Order/Order';
+import './MyOrders.css';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]);
@@ -30,6 +32,13 @@ const MyOrders = () => {
                     ></Order>)
                 }
             </Row>
+
+            {/* Add new service */}
+            <div className="container btn-container">
+                <div className="add-btn">
+                    <Link to="/addService"><Button className="btn-regular rounded-pill"><i className="fas fa-plus-square"></i>  Add a new service</Button></Link>
+                </div>
+            </div>
         </div>
     );
 };

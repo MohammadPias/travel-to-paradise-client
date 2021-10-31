@@ -20,7 +20,7 @@ const Login = () => {
         <div className="container mx-auto google-signin">
             <h4 className="text-center">Signin</h4>
             <div className="d-flex justify-content-center align-items-center my-5">
-                <button onClick={handleGoogleLogin} type="button" class="btn btn-outline-success rounded-pill google-btn"><i class="fab fa-google"></i> Continue with google</button>
+                <button onClick={handleGoogleLogin} type="button" className="btn btn-outline-success rounded-pill google-btn"><i className="fab fa-google"></i> Continue with google</button>
             </div>
         </div>
     );

@@ -1,0 +1,14 @@
+.btn-container{
+    margin-top: 50px;
+    height: 50vh;
+    background-color: #efffd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+.add-btn{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}

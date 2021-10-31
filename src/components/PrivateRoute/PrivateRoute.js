@@ -5,13 +5,11 @@ import useAuth from '../Context/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLodding } = useAuth();
-    console.log(isLodding);
     if (isLodding) {
         return <div className=" w-25 mx-auto">
             <Spinner animation="border" variant="success" />
         </div>
     }
-    console.log(isLodding);
     return (
         <Route
             {...rest}
